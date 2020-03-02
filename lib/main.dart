@@ -35,50 +35,46 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FractionallySizedBox(
-        heightFactor: 1,
-        widthFactor: 1,
-        child: ListView(
-          children: elements.map((element) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                color: Colors.yellow,
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 9,
-                      child: Container(
-                        color: Colors.blue,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                            child: Text(
-                              element.shortName,
-                            ),
+      body: ListView(
+        children: elements.map((element) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              color: Colors.yellow[800],
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 9,
+                    child: Container(
+                      color: Colors.grey,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Text(
+                            element.shortName,
                           ),
                         ),
                       ),
                     ),
-                    Expanded(
-                      flex: 1,
-                      child: IconButton(
-                        icon: Icon(Icons.arrow_right),
-                        onPressed: () async {
-                          await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      element.appScreen(context)));
-                        },
-                      ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_right),
+                      onPressed: () async {
+                        await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    element.appScreen(context)));
+                      },
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            );
-          }).toList(),
-        ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }
