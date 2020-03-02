@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_algo_visualizer/moldable.dart';
 
 class BST extends Moldable {
+  String taskDescription =
+      'Given the root to a binary search tree, find the second largest node in the tree.';
+
+  String shortName = 'Largest second node in BST';
   BST left;
   BST right;
   Color _color;
@@ -121,6 +125,8 @@ class BST extends Moldable {
       ),
     );
   }
+
+  Widget view = SecondLargestNode();
 }
 
 class SecondLargestNode extends StatefulWidget {
@@ -150,7 +156,8 @@ class _SecondLargestNodeState extends State<SecondLargestNode> {
           flex: 1,
           child: Center(
             child: Text(
-                'Given the root to a binary search tree, find the second largest node in the tree.'),
+              bst.taskDescription,
+            ),
           ),
         ),
         Expanded(

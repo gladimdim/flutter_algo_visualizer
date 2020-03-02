@@ -14,9 +14,16 @@ class NumberValue<T> {
   }
 }
 
-class Median implements Moldable {
+class Median extends Moldable {
+  Widget view = MedianView();
+  String shortName = 'Median of the list';
   List left = [];
   List right = [];
+
+  String taskDescription =
+      '''Compute the running median of a sequence of numbers. \n\nThat is, given a stream of numbers, print out the median of the list so far on each new element.
+                  \n\nRecall that the median of an even-numbered list is the average of the two middle numbers.
+                  \n\nFor example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should print out:(2, 1.5, 2, 3.5, 2, 2, 2)''';
 
   void addNumber(int number) {
     var numberValue = NumberValue(number);
@@ -155,9 +162,7 @@ class Median implements Moldable {
             padding: const EdgeInsets.all(8.0),
             child: SingleChildScrollView(
               child: Text(
-                '''Compute the running median of a sequence of numbers. \n\nThat is, given a stream of numbers, print out the median of the list so far on each new element.
-                  \n\nRecall that the median of an even-numbered list is the average of the two middle numbers.
-                  \n\nFor example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should print out:(2, 1.5, 2, 3.5, 2, 2, 2)''',
+                taskDescription,
               ),
             ),
           ),
@@ -186,8 +191,6 @@ class MedianView extends StatefulWidget {
 
 class _MedianViewState extends State<MedianView> {
   final Moldable median = Median();
-  final Moldable median2 = Median();
-  final Moldable median3 = Median();
 
   @override
   Widget build(BuildContext context) {
@@ -197,15 +200,6 @@ class _MedianViewState extends State<MedianView> {
         Expanded(
           flex: 1,
           child: median.build(
-            context,
-            () {
-              setState(() {});
-            },
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: median2.build(
             context,
             () {
               setState(() {});
