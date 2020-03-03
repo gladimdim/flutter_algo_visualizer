@@ -1,16 +1,27 @@
-# flutter_algo_visualizer
-
-A new Flutter project.
+# Flutter Moldable Algorithm Runner Examples
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Extend class Moldable like shown in classes:
 
-A few resources to get you started if this is your first Flutter project:
+- Median
+- BST
+- SegregateRGB
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Add instance of your class to
+```
+static List<Moldable> allSubclasses
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Run the app and you will see your moldable algorithm explorer.
+
+Example of running three moldable algorithms:
+
+![Example](examples/example.gif)
+
+## Implemented
+- *Binary Search Tree*. You can add random numbers to the tree and check your algorithm works.
+- *Segregated Array*. You can shuffle input array and then run the algorithm.
+- *Median*. Watch how your algorithm works by adding random numbers to the array to count its median.
+
+
