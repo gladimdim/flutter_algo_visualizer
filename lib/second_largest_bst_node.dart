@@ -126,6 +126,29 @@ class BST extends Moldable {
     );
   }
 
+  largest() {
+    if (right == null) {
+      return this.value;
+    } else {
+      return right.largest();
+    }
+  }
+
+  secondLargest() {
+    if (right == null && left == null) {
+      return null;
+    }
+    if (right.right == null) {
+      if (right.left == null) {
+        return this.value;
+      } else {
+        return this.right.left.largest();
+      }
+    } else {
+      return this.right.secondLargest();
+    }
+  }
+
   Widget view = SecondLargestNode();
 }
 
@@ -159,6 +182,21 @@ class _SecondLargestNodeState extends State<SecondLargestNode> {
               bst.taskDescription,
             ),
           ),
+        ),
+        if (bst.secondLargest() != null)
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.grey,
+              child: Center(
+                child: Text(
+                  'Second largest node is: ${bst.secondLargest().toString()}',
+                ),
+              ),
+            ),
+          ),
+        SizedBox(
+          height: 64,
         ),
         Expanded(
           flex: 1,
