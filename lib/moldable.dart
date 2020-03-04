@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_algo_visualizer/median.dart';
+import 'package:flutter_algo_visualizer/power_set.dart';
 import 'package:flutter_algo_visualizer/second_largest_bst_node.dart';
 import 'package:flutter_algo_visualizer/segregate_array.dart';
 
@@ -35,6 +36,7 @@ abstract class Moldable {
     Median(),
     BST(50),
     SegregateRGB(),
+    PowerSet(List()),
   ];
 
   @override
